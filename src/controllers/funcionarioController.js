@@ -17,3 +17,16 @@ export const inserirFuncionario = (req, res) => {
     res.json({ mensagem: 'Funcionário inserido com sucesso' });
   });
 };
+
+export const atualizarFuncionario = (req, res) => {
+
+  const {id} = req.params;
+  const {nome, cargo, salario} = req.body;
+
+  const sql = 'UPDATE funcionarios SET nome = ?, cargo = ?, salario = ? WHERE id = ?';
+
+  db.query(sql, [nome, cargo, salario, id], err => {
+    if(err) return res.status(500).json( { error: 'Erro ao atualizar funcionário' });
+    res.json({ mensagem: 'Funcionário atualizado com sucesso' });
+  });   
+};  
