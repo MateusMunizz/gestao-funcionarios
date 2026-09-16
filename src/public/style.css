@@ -1,0 +1,262 @@
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+  font-family: Arial, sans-serif;
+}
+
+/* Fundo */
+body {
+  background: url('imagens/img-gestao.jpg') no-repeat center center fixed;
+  background-size: cover;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  min-height: 100vh;
+  padding: 20px;
+  color:aliceblue
+}
+
+/* Container */
+.container {
+  width: 100%;
+  max-width: 700px;
+  background-color: rgba(143, 72, 72, 0.7);
+  backdrop-filter: blur(10px);
+  border-radius: 10px;
+  padding: 30px;
+  box-shadow: inset 0 0 10px rgba(0, 0, 0, 0.5);
+  border: 1px solid rgba(255, 255, 255, 0.2);
+  overflow: hidden;
+  transition: all 0.3s ease-in-out;
+}
+
+.container:hover {
+  transform: scale(1.02);
+  box-shadow: inset 0 0 20px rgba(0, 0, 0, 0.7);
+}
+
+/* Cabeçalho */
+header {
+  background: linear-gradient(90deg, #954aeb,#144126, #cc0033);
+  color: #fff;
+  text-align: center;
+  padding: 1.2rem;
+  border-radius: 10px 10px 0 0;
+  font-weight: 600;
+  letter-spacing: 1px;
+  font-size: 1.5rem;
+}
+
+/* Conteúdo Principal */
+main{ 
+  margin-top: 20px;
+}
+
+h2{
+  color:aqua;
+  margin-bottom: 15px;
+  font-size: 1.2rem;
+
+  border-left: 5px solid #2fc86c;
+  padding-left: 10px;
+  letter-spacing: 1px;
+}
+
+/* Seções */
+.form-section,
+.list-section {
+  background-color: #030303;
+  padding: 20px;
+  border-radius: 10px;
+  box-shadow: inset 0 0 10px rgba(0, 0, 0, 0.5);
+  margin-bottom: 25px;
+  overflow: auto;
+  -webkit-overflow-scrolling: touch;
+}
+
+/* Formulário */
+form {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 15px;
+  width: 100%;
+}
+
+input {
+  flex: 1 1 calc(50% - 10px);
+  padding: 10px;
+  border: 1px solid #010101;
+  border-radius: 5px;
+  background-color: #f0f0f0;
+  color: #000;
+  transition: border-color 0.3s ease;
+  font-size: 1rem;
+}
+
+input:focus {
+  border-color: #2fc86c;
+  outline: none;
+  box-shadow: 0 0 5px rgba(47, 200, 108, 0.5);
+}
+
+/* Botão Gerais */
+button{
+  
+  padding: 5px 20px;
+  border: none;
+  border-radius: 5px;
+  background-color: #1b4f30;
+  color: #fff;
+  cursor: pointer;
+  transition: background-color 0.3s ease, transform 0.2s ease;
+  white-space: nowrap;
+  font-weight: 600;
+}
+
+button:hover {
+  background-color: #4c6356;
+  transform: scale(1.05);
+}
+
+/* Tabela */
+table {
+  width: 100%;
+  border-collapse: collapse;
+  margin-top: 15px;
+  border-radius: 10px;
+  overflow: hidden;
+}
+
+th {
+  background: linear-gradient(90deg, #2c2929, #51aa78);
+  color: #fff;
+  padding: 10px;
+  text-align: left;
+  font-weight: 600;
+  white-space: nowrap;
+}
+
+th:first-child,
+td:first-child {
+  border-left: 2px solid rgba(255, 255, 255, 0.3);
+}
+
+th:last-child,
+td:last-child {
+  border-right: 2px solid rgba(255, 255, 255, 0.3);
+}
+
+td{
+  padding: 10px;
+  border-bottom: 1px solid #000000;
+  color: #e4e1e1;
+  white-space: nowrap;
+}
+
+tr:nth-child(even) {
+  background-color: rgba(7, 6, 6, 0.674);
+}
+
+td:last-child{
+  min-width: 200px;
+  white-space: nowrap;
+}
+
+/* Botões dentro da tabela (Desktop/Padrão */
+td button {
+  margin-right: 10px;
+  padding: 5px 10px;
+  font-size: 0.9rem;
+  border-radius: 5px;
+  min-width: 80px;
+  display: inline-block;
+  white-space: nowrap;
+}
+
+
+td button.edit {
+  background: linear-gradient(90deg, #dbb15d, #c09a4a);
+}
+
+td button.edit:hover {
+  background: linear-gradient(90deg, #c09a4a, #dbb15d);
+}
+
+td button.delete {
+  background: linear-gradient(90deg, #cc0033, #8934eb);
+}
+
+td button.delete:hover {
+  background: linear-gradient(90deg, #8934eb, #cc0033);
+}
+
+footer {
+  background: linear-gradient(90deg, #954aeb,#144126, #cc0033);
+  color: #fff;
+  text-align: center;
+  padding: 1.2rem;
+  border-radius: 0 0 10px 10px;
+  font-size: 1rem;
+  letter-spacing: 1px;
+  margin-top: 20px;
+}
+
+/* AJUSTES DE RESPONSIVIDADE (MOBILE) */
+@media (max-width: 768px) {
+  body{
+    padding: 15px;
+  }
+
+  .container {
+    padding: 20px;
+  }
+
+  form {
+    flex-direction: column;
+  }
+
+  input, 
+  button:not(td button) {
+    width: 100%;
+    min-width: auto;
+  }
+
+  th, 
+  td {
+    font-size: 0.9rem;
+    white-space: normal;  
+  }
+
+  td:last-child {
+    min-width: 120px;
+    padding: 8px 10px;
+    white-space: normal;
+  }
+
+  td button {
+    display: block;
+    width: 100%;
+    margin: 4px 0;
+    text-align: center;
+    padding: 10px 14px;
+    min-width: auto;
+  }
+
+  header, footer {
+    font-size: 1rem; 
+  }
+
+}
+
+/* Ajustes Menores */
+@media (max-width: 480px) {
+  .container {
+    padding: 15px;
+  }
+
+  h2 {
+    font-size: 1.1rem;
+  }
+
+}
