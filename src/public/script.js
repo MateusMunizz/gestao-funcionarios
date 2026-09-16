@@ -1,4 +1,4 @@
-const API_URL = 'http://localhost:3001/funcionarios';
+const API_URL = '/funcionarios';
 
 async function carregarFuncionarios() {
     try {
